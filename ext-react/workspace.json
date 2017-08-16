@@ -1,0 +1,17 @@
+{
+    "apps": [
+        "packages/custom-ext-react-theme/.sencha/temp/Themer"
+    ],
+    "frameworks": {
+        "ext": "../node_modules/@extjs/ext-react"
+    },
+    "build": {
+        "dir": "${workspace.dir}/build"
+    },
+    "packages": {
+        "dir": "${workspace.dir}/packages,${workspace.dir}/../node_modules/@extjs"
+    },
+    "properties": {
+        "build.web.root": "${workspace.dir}/../"
+    }
+}
