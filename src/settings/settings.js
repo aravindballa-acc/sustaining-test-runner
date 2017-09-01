@@ -1,27 +1,28 @@
-import React, {Component} from 'react';
-import {Container, TabPanel, Dialog} from '@extjs/ext-react';
-import {showSettings} from '../actions';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { Container, TabPanel, Dialog } from '@extjs/ext-react';
+import { showSettings } from '../actions';
+import { connect } from 'react-redux';
 
-function Settings({...props}) {
-    const {displayed} = props;
+function Settings({
+    ...props
+}) {
+    const { displayed } = props;
 
-    const onHide = () => {
-        props.dispatch(showSettings(false));
+    const onHide = ( ) => {
+        props.dispatch(showSettings( false ));
     }
 
     return (
         <Dialog
-            title="Settings"
+            title='Settings'
             displayed={displayed}
             closable
-            closeAction="hide"
-            width="600"
+            closeAction='hide'
+            width='600'
             maskTapHandler={onHide}
-            onHide={onHide}
-        >
+            onHide={onHide}>
             <TabPanel
-                height={200}
+                height={400}
                 shadow
                 tabBar={{
                 docked: 'top'
@@ -30,22 +31,16 @@ function Settings({...props}) {
                 cls: 'card',
                 layout: 'center'
             }}>
-                <Container title="Test Cases" iconCls="x-fa fa-flask">
-                    tab 1
-                </Container>
-                <Container title="Unit Tests" iconCls="x-fa fa-bomb">
-                    tab 2
-                </Container>
-                <Container title="Bisecting" iconCls="x-fa fa-git">
-                    tab 3
+                <Container title='Projects' iconCls='x-fa fa-code'>
+                    <Grid store='projects' />
                 </Container>
             </TabPanel>
         </Dialog>
     );
 }
 
-const mapStateToProps = (state) => {
-    return {displayed: state.showSettings}
+const mapStateToProps = ( state ) => {
+    return { displayed: state.showSettings };
 }
 
-export default connect(mapStateToProps)(Settings);
+export default connect( mapStateToProps )( Settings );

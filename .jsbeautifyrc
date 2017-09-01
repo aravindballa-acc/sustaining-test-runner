@@ -1,0 +1,12 @@
+{
+    "brace_style": "collapse",
+    "bracepadding": true,
+    "correct": true,
+    "methodchain": "chain",
+    "newline": true,
+    "objsort": "all",
+    "quoteConvert": "single",
+    "spaceclose": true,
+    "tagmerge": true,
+    "varword": "list"
+  }
